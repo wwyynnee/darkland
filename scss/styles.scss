@@ -1,0 +1,92 @@
+$background: #1f2029;
+$color: #bc00d1;
+$radius: 5px;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+  user-select: none;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background: $color;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Andika&family=Roboto:wght@500&display=swap");
+
+@mixin bg {
+  background: url("../img/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@mixin clearLink {
+  text-decoration: none;
+  color: inherit;
+}
+@mixin hover {
+  &:hover {
+    background-color: #ffffff20;
+    color: $color;
+  }
+}
+@mixin alignItems {
+  display: flex;
+  align-items: center;
+}
+
+html, body {
+  @include bg;
+  font-family: "Andika", sans-serif;
+  background-color: $background;
+  color: white;
+  height: 100vh;
+  overflow-x: hidden;
+}
+.header {
+  @include alignItems;
+  justify-content: space-between;
+  padding: 1rem;
+  height: 4rem;
+  width: calc(100% - 2rem);
+  &__content {
+    @include alignItems;
+    height: 3rem;
+  }
+  &__items {
+    @include alignItems;
+    margin: 0 1rem;  
+    a {
+      @include clearLink;
+    }
+    ul {
+      list-style-type: none;
+      a {
+        @include hover;
+        border-radius: $radius;
+        padding: 1rem;
+        li {
+          display: inline;
+        }
+      }
+    }
+    p {
+      @include alignItems;
+      @include hover;
+      border-radius: $radius;
+      padding: 1rem;
+    }
+  }
+  &__icon {
+    height: 3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 3px solid;
+    padding: 11px 16px !important;
+    margin-right: 20px;
+    text-align: center;
+  }
+}

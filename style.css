@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Andika&family=Roboto:wght@500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+  user-select: none;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #bc00d1;
+}
+
+html, body {
+  background: url("../img/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Andika", sans-serif;
+  background-color: #1f2029;
+  color: white;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  height: 4rem;
+  width: calc(100% - 2rem);
+}
+.header__content {
+  display: flex;
+  align-items: center;
+  height: 3rem;
+}
+.header__items {
+  display: flex;
+  align-items: center;
+  margin: 0 1rem;
+}
+.header__items a {
+  text-decoration: none;
+  color: inherit;
+}
+.header__items ul {
+  list-style-type: none;
+}
+.header__items ul a {
+  border-radius: 5px;
+  padding: 1rem;
+}
+.header__items ul a:hover {
+  background-color: rgba(255, 255, 255, 0.1254901961);
+  color: #bc00d1;
+}
+.header__items ul a li {
+  display: inline;
+}
+.header__items p {
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  padding: 1rem;
+}
+.header__items p:hover {
+  background-color: rgba(255, 255, 255, 0.1254901961);
+  color: #bc00d1;
+}
+.header__icon {
+  height: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: 3px solid;
+  padding: 11px 16px !important;
+  margin-right: 20px;
+  text-align: center;
+}
+
+/*# sourceMappingURL=style.css.map */
