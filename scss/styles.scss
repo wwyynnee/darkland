@@ -30,6 +30,8 @@ $radius: 5px;
 @mixin hover {
   &:hover {
     background-color: #ffffff20;
+    border-radius: $radius;
+    transition: 0.3s;
     color: $color;
   }
 }
@@ -44,6 +46,7 @@ html, body {
   background-color: $background;
   color: white;
   height: 100vh;
+  width: 100vw;
   overflow-x: hidden;
 }
 .header {
@@ -81,12 +84,36 @@ html, body {
     }
   }
   &__icon {
+    display: flex;
     height: 3rem;
     font-weight: 700;
     text-transform: uppercase;
+    border-radius: $radius;
     border: 3px solid;
-    padding: 11px 16px !important;
-    margin-right: 20px;
-    text-align: center;
+    p {
+      color: inherit !important;
+    }
+  }
+}
+.main {
+  &__block {
+    margin: 1rem;
+    h2 {
+      text-align: center;
+    }
+  }
+  &__status {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__container {
+    background-color: $background;
+    min-height: 192px;
+    width: calc(50% - 0.5rem);
+    margin: 0.25rem;
+    iframe {
+      height: 100%;
+      width: 100%;
+    }
   }
 }
