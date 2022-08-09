@@ -1,5 +1,6 @@
 $background: #1f2029;
 $color: #ffa492;
+$color-embed: #2f3136;
 $radius: 5px;
 
 * {
@@ -35,26 +36,31 @@ $radius: 5px;
     color: $color;
   }
 }
+@mixin hoverLink {
+  &:hover {
+    text-decoration: underline;
+    transition: 0.3s;
+  }
+}
 @mixin alignItems {
   display: flex;
   align-items: center;
 }
 
-html, body {
+html, body, .wrapper {
   font-family: "Andika", sans-serif;
   background-color: $background;
   color: white;
-  height: 100vh;
-  width: 100vw;
   overflow-x: hidden;
+  scroll-behavior: smooth;
+  height: 100%;
 }
 .header {
   @include alignItems;
   justify-content: space-between;
   padding: 1rem;
-  height: 4rem;
   width: calc(100% - 2rem);
-  position: relative;
+  position: absolute;
   z-index: 1;
   &__content {
     @include alignItems;
@@ -97,7 +103,6 @@ html, body {
 }
 .main {
   position: absolute;
-  top: 0;
   width: 100vw;
   &__content {
     h1 {
@@ -125,7 +130,8 @@ html, body {
     }
   }
   &__btn {
-    display: flex;
+    @include alignItems;
+    justify-content: center;
     flex-wrap: wrap;
     button {
       @include hover;
@@ -141,9 +147,41 @@ html, body {
       border-radius: $radius;
     }
   }
+  &__about {
+    margin: 1rem;
+    h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      text-align: center;
+    }
+    a {
+      @include hoverLink;
+      text-decoration: none;
+      color: $color;
+    }
+  }
   &__status {
     display: flex;
     flex-wrap: wrap;
+  }
+  &__rules {
+    display: flex;
+    flex-direction: column;
+    p {
+      background-color: $color-embed;
+      border-left: .25rem solid $color;
+      padding: .5rem;
+      border-radius: $radius;
+      font-size: 1rem;
+      line-height: 1.75;
+      span {
+        background-color: #202225;
+        border-radius: $radius;
+        padding: 0 .25rem;
+        font-weight: 500;
+        font-size: 1rem;
+      }
+    }
   }
   &__container {
     
@@ -162,5 +200,19 @@ html, body {
 }
 .footer {
   display: flex;
+  flex-direction: column;
   width: 100%;
+  position: relative;
+  bottom: 0;
+  svg {
+    width: 100vw;
+    fill: $color-embed;
+    stroke: $color;
+    stroke-width: 0.075px;
+    paint-order: stroke;
+  }
+  &__content {
+    @include alignItems;
+    background-color: $color-embed;
+  }
 }

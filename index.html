@@ -1,90 +1,178 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="img/darkland.png" />
-	<link rel="stylesheet" href="style.css" type="text/css" />
+  <link rel="stylesheet" href="style.css" type="text/css" />
   <title>Darkland — Дискорд Сервер</title>
 </head>
 
 <body id="app">
   <div class="wrapper">
-    <header>
-      <div class="header">
-        <div class="header__content">
-          <div class="header__items">
-            <a href="/">
-              <div class="header__icon">
-                <p>Darkland</p>
-              </div>
-            </a>
-          </div>
-          <div class="header__items">
-            <ul>
-              <a href="join.html" target="_blank"><li>Присоединиться</li></a>
-              <a href="#"><li>Статистика</li></a>
-              <a href="#"><li>Правила</li></a>
-              <a href="#"><li>Поддержка</li></a>
-            </ul>
-          </div>
+    <div class="header">
+      <div class="header__content">
+        <div class="header__items">
+          <a href="/">
+            <div class="header__icon">
+              <p>Darkland</p>
+            </div>
+          </a>
         </div>
-        <div class="header__content">
+        <div class="header__items">
+          <ul>
+            <a href="join.html" target="_blank">
+              <li>Присоединиться</li>
+            </a>
+            <a href="#about">
+              <li>Описание</li>
+            </a>
+            <a href="#status">
+              <li>Статистика</li>
+            </a>
+            <a href="#rules">
+              <li>Правила</li>
+            </a>
+            <a href="#support">
+              <li>Поддержка</li>
+            </a>
+          </ul>
+        </div>
+      </div>
+      <!--<div class="header__content">
           <div class="header__items">
             <p>Авторизация</p>
           </div>
+        </div>-->
+    </div>
+    <div class="main">
+      <div class="main__content">
+        <div class="main__block">
+          <h1>Darkland</h1>
+          <p>Уютный сервер для простого общения! Здесь вы сможете найти друга/подругу по интересам и просто пообщаться в легкой обстановке</p>
+        </div>
+        <div class="main__btn">
+          <a href="join.html" target="_blank">
+            <button>Присоединиться к серверу</button>
+          </a>
+          <a href="https://discordserver.info/811266515562397696/like" onClick="like(this); return false;" target="_blank">
+            <button>Проголосовать за сервер</button>
+          </a>
+          <a href="https://discordserver.info/811266515562397696/lucky" onClick="like(this); return false;" target="_blank">
+            <button>Испытать удачу</button>
+          </a>
         </div>
       </div>
-    </header>
-    <main>
-      <div class="main">
-        <div class="main__content">
-          <div class="main__block">
-            <h1>Darkland</h1>
-            <p>Уютный сервер для простого общения! Здесь вы сможете найти друга/подругу по интересам и просто пообщаться в легкой обстановке</p>
-          </div>
-          <div class="main__btn">
-            <a href="join.html" target="_blank">
-              <button>Присоединиться к серверу</button>
-            </a>
-            <a href="https://discordserver.info/811266515562397696/like" onClick="like(this); return false;">
-              <button>Проголосовать за сервер</button>
-            </a>
-            <a href="https://discordserver.info/811266515562397696/lucky">
-              <button>Испытать удачу</button>
-            </a>
-          </div>
+      <div class="main__content" id="about">
+        <div class="main__block">
+          <h2>Описание</h2>
         </div>
-        <div class="main__content">
-          <div class="main__block">
-            <h2>Статистика</h2>
+        <div class="main__about">
+          <p>Мы обещаем ☕ чаёчка, одеял и 🍪 печенек. Но здесь ты можешь обзавестись новыми друзьями, вместе с нами посмеяться над смешными (и не очень) шутками и, вообще, поговорить на многие темы 🌠. Мы можем поддержать в трудную минуту ✅, дать совет. Мы обещаем Вам теплого ☕ и уютную атмосферу, возможность найти настоящую семью на сервере. Мы будем рады каждому человеку, кто придёт на этот сервер. 💗 Надеюсь, что мы Вас не разочаруем. Заходи на сервер прямо сейчас, общайся, играй. Ждём именно тебя 💕</p>
+        </div>
+      </div>
+      <div class="main__content" id="status">
+        <div class="main__block">
+          <h2>Статистика</h2>
+        </div>
+        <div class="main__status">
+          <div class="main__container">
+            <p>Участники</p>
+            <iframe src="https://discordserver.info/811266515562397696/widgets/chart/users" frameborder="0"></iframe>
           </div>
-          <div class="main__status">
-            <div class="main__container">
-              <p>Участники</p>
-              <iframe src="https://discordserver.info/811266515562397696/widgets/chart/users" frameborder="0"></iframe>
-            </div>
-            <div class="main__container">
-              <p>Активности</p>
-              <iframe src="https://discordserver.info/811266515562397696/widgets/chart/activity" frameborder="0"></iframe>
-            </div>
-            <div class="main__container">
-              <p>Сообщения</p>
-              <iframe src="https://discordserver.info/811266515562397696/widgets/chart/messages" frameborder="0"></iframe>
-            </div>
-            <div class="main__container">
-              <p>Онлайн</p>
-              <iframe src="https://discordserver.info/811266515562397696/widgets/chart/online" frameborder="0"></iframe>
-            </div>
+          <div class="main__container">
+            <p>Активность</p>
+            <iframe src="https://discordserver.info/811266515562397696/widgets/chart/activity" frameborder="0"></iframe>
+          </div>
+          <div class="main__container">
+            <p>Сообщения</p>
+            <iframe src="https://discordserver.info/811266515562397696/widgets/chart/messages" frameborder="0"></iframe>
+          </div>
+          <div class="main__container">
+            <p>Онлайн</p>
+            <iframe src="https://discordserver.info/811266515562397696/widgets/chart/online" frameborder="0"></iframe>
           </div>
         </div>
       </div>
-    </main>
-    <footer>
-      <div class="footer"></div>
-    </footer>
-	</div>
-	<script src="script.js" defer></script>
+      <div class="main__content" id="rules">
+        <div class="main__block">
+          <h2>Правила</h2>
+        </div>
+        <div class="main__about main__rules">
+          <h3>Текстовые каналы</h3>
+          <p>
+            <span>1.1</span> Реклама чего-либо, спам (В лс - бан, на сервере - мьют от 24ч. до бана)
+            <br />
+            <span>1.2</span> Флуд, злоупотребление CAPS, многочисленные упоминания без причины (Мьют от 1ч.)
+            <br />
+            <span>1.3</span> Неадекватное, агрессивное и провокационное поведение, а также ответ на провокации (Мьют от 1ч.)
+            <br />
+            <span>1.4</span> Любые оскорбления, в т.ч. семьи и себя, а также дискриминация и травля по любому признаку (Мьют от 1ч. до бана)
+            <br />
+            <span>1.5</span> Торговля и обмен чем-либо, предложение различных услуг, попрошайничество (Мьют от 24ч.)
+            <br />
+            <span>1.6</span> Распространение вредоносных файлов и ПО, а также фишинг ссылок (Мьют от 12ч. до бана)
+            <br />
+            <span>1.7</span> Жестокие и откровенные материалы вне 🔞┆nsfw (От предупреждения до мьюта)
+            <br />
+            <span>1.8</span> Пропаганда нездорового образа жизни, суицида и т.п (Мьют от 1ч.)
+            <br />
+            <span>1.9</span> Обход наказаний и ограничений любым способом (От продления наказания до бана)
+            <br />
+            <span>1.10</span> Офф-топик, сообщения не по теме канала (От предупреждения до мьюта)
+          </p>
+          <h3>Голосовые каналы</h3>
+          <p>
+            <span>2.1</span> Посторонние звуки, мешающие общению или прослушиванию (Мьют микрофона от 5мин.)
+            <br />
+            <span>2.2</span> Использование музыкального бота в непредназначенном для него канале (От предупреждения до мьюта микрофона/ушей)
+            <br />
+            <span>2.3</span> Частое переподключение и перемещение по каналам (От предупреждения до запрета на подключение)
+            <br />
+            <span>2.4</span> Неадекватная манера речи, оскорбление, токсичность и прочее (Мьют микрофона от 10мин.)
+          </p>
+          <h3>Правила Discord</h3>
+          <p>
+            <span>3.1</span> Нарушение <a href="https://discord.com/guidelines" target="_blank">правил сообщества Discord</a>
+            <br />
+            <span>3.2</span> Несоблюдение <a href="https://discord.com/terms" target="_blank">условий использования Discord</a>
+          </p>
+          <h3>Рекомендации</h3>
+          <p>Не стоит использовать недостатки правил, прикрываясь ими и доказывая за счет них свою правоту. Также не надо обсуждать и осуждать решения администраторов и модераторов сервера, они могут действовать в зависимости от ситуации по-разному и с некоторым отхождением от общих правил</p>
+        </div>
+      </div>
+      <div class="main__content" id="support">
+        <div class="main__block">
+          <h2>Поддержка</h2>
+        </div>
+        <div class="main__about">
+          <p>
+            Владелец: <a href="https://discord.com/users/598888703296929940" target="_blank">Vito Scaletta#8346</a>
+            <br /> Администратор и разработчик сайта: <a href="https://discord.com/users/980103023034527865" target="_blank">Wynne#5531</a>
+            <br /> Другие администраторы сервера: <a href="https://discord.com/users/448436911690743828" target="_blank">Нвах#1614</a>, <a href="https://discord.com/users/654296438280421407" target="_blank">Sir Longarm#9369</a> и <a href="https://discord.com/users/425901434995998730" target="_blank">Владиславъ Калашниковъ#7940</a>
+          </p>
+        </div>
+      </div>
+      <div class="footer">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2 12 2">
+          <path d="M0 0 12 0C11-1 9-1 9-2 8-2 8-1 7-1 5-2 4-1 3-2 2-2 1 0 0-1"/>
+        </svg>
+        <div class="footer__content">
+          <div class="footer__container">
+            <ul>
+              <li></li>
+            </ul>
+          </div>
+          <div class="footer__container">
+            <p>Darkland &copy; 2022 | v2.0</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js" defer></script>
   <script src="https://discordserver.info/like.js" defer></script>
 </body>
+
 </html>
