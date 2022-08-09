@@ -1,5 +1,5 @@
 $background: #1f2029;
-$color: #bc00d1;
+$color: #ffa492;
 $radius: 5px;
 
 * {
@@ -13,13 +13,13 @@ $radius: 5px;
   width: 5px;
 }
 ::-webkit-scrollbar-thumb {
-  background: $color;
+  background-color: $color;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Andika&family=Roboto:wght@500&display=swap");
 
 @mixin bg {
-  background: url("../img/background.jpg");
+  background: url("../img/background.jpg") center center;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -41,7 +41,6 @@ $radius: 5px;
 }
 
 html, body {
-  @include bg;
   font-family: "Andika", sans-serif;
   background-color: $background;
   color: white;
@@ -55,6 +54,8 @@ html, body {
   padding: 1rem;
   height: 4rem;
   width: calc(100% - 2rem);
+  position: relative;
+  z-index: 1;
   &__content {
     @include alignItems;
     height: 3rem;
@@ -87,7 +88,6 @@ html, body {
     display: flex;
     height: 3rem;
     font-weight: 700;
-    text-transform: uppercase;
     border-radius: $radius;
     border: 3px solid;
     p {
@@ -96,10 +96,49 @@ html, body {
   }
 }
 .main {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  &__content {
+    h1 {
+      font-size: 3.25rem;
+      margin: 1rem 0;
+    }
+    p {
+      font-size: 1.1rem;
+      margin: 1rem 0;
+    }
+    &:nth-child(1) {
+      @include bg;
+      @include alignItems;
+      justify-content: center;
+      flex-direction: column;
+      height: 100vh;
+    }
+  }
   &__block {
+    display: flex;
+    flex-direction: column;
     margin: 1rem;
-    h2 {
-      text-align: center;
+    h1, h2, p {
+     text-align: center;
+    }
+  }
+  &__btn {
+    display: flex;
+    flex-wrap: wrap;
+    button {
+      @include hover;
+      background-color: #ffffff20;
+      font-size: 1.1rem;
+      height: 3rem;
+      margin: 1.5rem;
+      width: 22.5rem;
+      padding: .35rem 1rem;
+      outline: none;
+      border: none;
+      color: white;
+      border-radius: $radius;
     }
   }
   &__status {
@@ -107,13 +146,21 @@ html, body {
     flex-wrap: wrap;
   }
   &__container {
-    background-color: $background;
+    
     min-height: 192px;
     width: calc(50% - 0.5rem);
     margin: 0.25rem;
+    p {
+      text-align: center;
+      font-size: 1.25rem;
+    }
     iframe {
       height: 100%;
       width: 100%;
     }
   }
+}
+.footer {
+  display: flex;
+  width: 100%;
 }

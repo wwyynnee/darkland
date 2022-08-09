@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="img/darkland.png" />
 	<link rel="stylesheet" href="style.css" type="text/css" />
-  <title>Darkland</title>
+  <title>Darkland — Дискорд Сервер</title>
 </head>
 
 <body id="app">
@@ -22,7 +22,7 @@
           </div>
           <div class="header__items">
             <ul>
-              <a href="join.html"><li>Присоединиться</li></a>
+              <a href="join.html" target="_blank"><li>Присоединиться</li></a>
               <a href="#"><li>Статистика</li></a>
               <a href="#"><li>Правила</li></a>
               <a href="#"><li>Поддержка</li></a>
@@ -38,28 +38,53 @@
     </header>
     <main>
       <div class="main">
-        <div class="main__analytics">
+        <div class="main__content">
+          <div class="main__block">
+            <h1>Darkland</h1>
+            <p>Уютный сервер для простого общения! Здесь вы сможете найти друга/подругу по интересам и просто пообщаться в легкой обстановке</p>
+          </div>
+          <div class="main__btn">
+            <a href="join.html" target="_blank">
+              <button>Присоединиться к серверу</button>
+            </a>
+            <a href="https://discordserver.info/811266515562397696/like" onClick="like(this); return false;">
+              <button>Проголосовать за сервер</button>
+            </a>
+            <a href="https://discordserver.info/811266515562397696/lucky">
+              <button>Испытать удачу</button>
+            </a>
+          </div>
+        </div>
+        <div class="main__content">
           <div class="main__block">
             <h2>Статистика</h2>
           </div>
           <div class="main__status">
             <div class="main__container">
+              <p>Участники</p>
               <iframe src="https://discordserver.info/811266515562397696/widgets/chart/users" frameborder="0"></iframe>
             </div>
             <div class="main__container">
+              <p>Активности</p>
               <iframe src="https://discordserver.info/811266515562397696/widgets/chart/activity" frameborder="0"></iframe>
             </div>
             <div class="main__container">
+              <p>Сообщения</p>
               <iframe src="https://discordserver.info/811266515562397696/widgets/chart/messages" frameborder="0"></iframe>
             </div>
             <div class="main__container">
+              <p>Онлайн</p>
               <iframe src="https://discordserver.info/811266515562397696/widgets/chart/online" frameborder="0"></iframe>
             </div>
           </div>
         </div>
       </div>
     </main>
+    <footer>
+      <div class="footer"></div>
+    </footer>
 	</div>
 	<script src="script.js" defer></script>
+  <script src="https://discordserver.info/like.js" defer></script>
 </body>
 </html>
