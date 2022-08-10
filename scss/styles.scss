@@ -1,6 +1,7 @@
 $background: #1f2029;
 $color: #ffa492;
 $color-embed: #2f3136;
+$color-code: #202225;
 $radius: 5px;
 
 * {
@@ -175,7 +176,7 @@ html, body, .wrapper {
       font-size: 1rem;
       line-height: 1.75;
       span {
-        background-color: #202225;
+        background-color: $color-code;
         border-radius: $radius;
         padding: 0 .25rem;
         font-weight: 500;
@@ -214,10 +215,26 @@ html, body, .wrapper {
     @include alignItems;
     flex-direction: column;
     background-color: $color-embed;
+    padding: 0 1rem;
   }
   &__links {
-    display: flex;
+    @include alignItems;
+    flex-wrap: wrap;
     width: 100%;
+    margin: 1rem 0;
+    justify-content: center;
+  }
+  &__icon {
+    @include alignItems;
+    flex-direction: column;
+    text-align: center;
+    width: 12.5rem;
+    img {
+      height: 5rem;
+    }
+  }
+  &__items {
+    display: flex;
   }
   &__container {
     margin: 0 1rem;
@@ -233,7 +250,38 @@ html, body, .wrapper {
       }
     }
   }
+  &__qr {
+    text-align: center;
+    font-size: .8rem;
+    width: 15rem;
+    img {
+      height: 5rem;
+    }
+  }
   &__copy {
-    margin: 1rem 0;
+    @include alignItems;
+    justify-content: space-between;
+    background-color: $color-code;
+    width: 100vw;
+    p {
+      margin: 1rem;
+    }
+    span {
+      @include alignItems;
+      margin: 0 1rem;
+      a {
+        @include alignItems;
+        @include clearLink;
+        @include hoverLink;
+        color: $color;
+        margin: 0 .5rem;
+        img {
+          height: 2rem;
+        }
+        p {
+          margin: 0 .2rem;
+        }
+      }
+    }
   }
 }

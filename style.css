@@ -211,10 +211,28 @@ html, body, .wrapper {
   align-items: center;
   flex-direction: column;
   background-color: #2f3136;
+  padding: 0 1rem;
 }
 .footer__links {
   display: flex;
+  align-items: center;
+  flex-wrap: wrap;
   width: 100%;
+  margin: 1rem 0;
+  justify-content: center;
+}
+.footer__icon {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  width: 12.5rem;
+}
+.footer__icon img {
+  height: 5rem;
+}
+.footer__items {
+  display: flex;
 }
 .footer__container {
   margin: 0 1rem;
@@ -234,8 +252,46 @@ html, body, .wrapper {
   text-decoration: underline;
   transition: 0.3s;
 }
+.footer__qr {
+  text-align: center;
+  font-size: 0.8rem;
+  width: 15rem;
+}
+.footer__qr img {
+  height: 5rem;
+}
 .footer__copy {
-  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #202225;
+  width: 100vw;
+}
+.footer__copy p {
+  margin: 1rem;
+}
+.footer__copy span {
+  display: flex;
+  align-items: center;
+  margin: 0 1rem;
+}
+.footer__copy span a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  color: #ffa492;
+  margin: 0 0.5rem;
+}
+.footer__copy span a:hover {
+  text-decoration: underline;
+  transition: 0.3s;
+}
+.footer__copy span a img {
+  height: 2rem;
+}
+.footer__copy span a p {
+  margin: 0 0.2rem;
 }
 
 /*# sourceMappingURL=style.css.map */
