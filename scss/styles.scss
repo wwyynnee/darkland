@@ -184,8 +184,7 @@ html, body, .wrapper {
     }
   }
   &__container {
-    
-    min-height: 192px;
+    min-height: 12rem;
     width: calc(50% - 0.5rem);
     margin: 0.25rem;
     p {
@@ -213,6 +212,28 @@ html, body, .wrapper {
   }
   &__content {
     @include alignItems;
+    flex-direction: column;
     background-color: $color-embed;
+  }
+  &__links {
+    display: flex;
+    width: 100%;
+  }
+  &__container {
+    margin: 0 1rem;
+    p {
+      font-size: 1.1rem;
+    }
+    ul {
+      list-style-type: none;
+      a {
+        @include clearLink;
+        @include hoverLink;
+        color: $color;
+      }
+    }
+  }
+  &__copy {
+    margin: 1rem 0;
   }
 }
