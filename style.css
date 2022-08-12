@@ -379,18 +379,31 @@ body, .wrapper, .main, .main__content, .main__content:nth-child(5), .main__statu
     width: calc(100vw - 2rem);
     padding: 0.35rem 0;
   }
-  .footer__copy p {
+  .footer__copy span p {
     font-size: 0.9rem;
     margin: 0.5rem;
   }
 }
 @media screen and (max-width: 21.875em) {
   /* 350px */
+  .footer__items {
+    text-align: center;
+    justify-content: center;
+  }
+  .footer__container {
+    max-width: 50%;
+  }
   .footer__copy span:nth-child(1) {
     flex-direction: column;
   }
   .footer__copy p {
     margin: 0.5rem;
+  }
+}
+@media screen and (max-width: 20.313em) {
+  /* 325px */
+  .footer__copy span p {
+    font-size: 0.8rem;
   }
 }
 

@@ -387,9 +387,11 @@ body, .wrapper, .main, .main__content, .main__content:nth-child(5), .main__statu
   }
   .footer {
     &__copy {
-      p {
-        font-size: .9rem;
-        margin: .5rem;
+      span {
+        p {
+          font-size: .9rem;
+          margin: .5rem;
+        }
       }
     }
   }
@@ -397,6 +399,13 @@ body, .wrapper, .main, .main__content, .main__content:nth-child(5), .main__statu
 @media screen and (max-width: 21.875em) {
   /* 350px */
   .footer {
+    &__items {
+      text-align: center;
+      justify-content: center;
+    }
+    &__container {
+      max-width: 50%;
+    }
     &__copy {
       span {
         &:nth-child(1) {
@@ -405,6 +414,18 @@ body, .wrapper, .main, .main__content, .main__content:nth-child(5), .main__statu
       }
       p {
         margin: .5rem;
+      }
+    }
+  }
+}
+@media screen and (max-width: 20.313em) {
+  /* 325px */
+  .footer {
+    &__copy {
+      span {
+        p {
+          font-size: .8rem;
+        }
       }
     }
   }
