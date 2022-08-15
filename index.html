@@ -7,17 +7,18 @@
   <meta name="theme-color" content="#ffa492">
   <link rel="icon" href="img/darkland.png" />
   <link rel="stylesheet" href="style.css" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <title>Darkland — Дискорд Сервер</title>
 </head>
 
-<body id="app">
-  <div class="wrapper">
+<body>
+  <div class="wrapper" id="app">
     <div class="header">
       <div class="header__content">
         <div class="header__items">
           <a href="/">
             <div class="header__icon">
-              <p>Darkland</p>
+              <p>{{ name }}</p>
             </div>
           </a>
         </div>
@@ -42,15 +43,32 @@
         </div>
       </div>
       <div class="header__content">
-        <div class="header__items">
-          <svg viewBox="0 0 512 512"><g><g><path fill="white" d="M381,190.9H131c-11,0-20-9-20-20s9-20,20-20h250c11,0,20,9,20,20S392,190.9,381,190.9z"/></g><g><path fill="white" d="M381,361.1H131c-11,0-20-9-20-20s9-20,20-20h250c11,0,20,9,20,20S392,361.1,381,361.1z"/></g><g><path fill="white" d="M381,276H131c-11,0-20-9-20-20s9-20,20-20h250c11,0,20,9,20,20S392,276,381,276z"/></g></g></svg>
-        </div>
+        <div class="header__items header__menu" onclick="active()">☰</div>
       </div>
     </div>
     <div class="main">
       <div class="main__content">
-        <div class="main__block">
-          <h1>Darkland</h1>
+        <div class="aside">
+          <ul>
+            <a href="join" target="_blank">
+              <li>Присоединиться</li>
+            </a>
+            <a href="#about">
+              <li>Описание</li>
+            </a>
+            <a href="#status">
+              <li>Статистика</li>
+            </a>
+            <a href="#rules">
+              <li>Правила</li>
+            </a>
+            <a href="#support">
+              <li>Поддержка</li>
+            </a>
+          </ul>
+        </div>
+        <div class="main__block main__name">
+          <h1>{{ name }}</h1>
           <p>Уютный сервер для простого общения! Здесь вы сможете найти собеседника по интересам и просто пообщаться в легкой обстановке</p>
         </div>
         <div class="main__btn">
@@ -247,8 +265,9 @@
           </div>
           <div class="footer__copy">
             <span>
-              <p>Darkland &copy; 2022 | v2.0</p>
-              <img src="https://discord.io/expresstime/badge" alt />            </span>
+              <p>{{ name }} &copy; 2022 | v2.0</p>
+              <img src="https://discord.io/expresstime/badge" alt />
+            </span>
             <span>
               <p>Разработка и идея сайта:</p> <a href="https://wynne.tk" target="_blank">
                 <img src="https://wynne.tk/icon.ico" alt />
@@ -262,6 +281,25 @@
   </div>
   <script src="script.js" defer></script>
   <script src="https://discordserver.info/like.js" defer></script>
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+  <script>
+    $(".aside").hide();
+    $("*").on("click", (e) => {
+      if ($(e.target).is(".header:nth-child(2), .header__items, .active")) {
+        return false;
+      }
+
+      $(".aside").hide();
+      $(".main__block").css("position", "static");
+    })
+    const active = () => {
+      $(".aside").toggle();
+      $(".main__block").css("position", "relative");
+    }
+  </script>
 </body>
 
 </html>

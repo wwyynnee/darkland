@@ -105,9 +105,32 @@ body, .wrapper, .main, .main__content, .main__content:nth-child(5), .main__statu
       border-radius: $radius;
       padding: 1rem;
     }
-    svg {
-      display: none;
-      height: 2.5rem;
+    @media screen and (max-width: 62em) {
+      /* 992px */
+      ul {
+        display: none;
+      }
+      svg {
+        display: block;
+      }
+    }
+  }
+  &__menu {
+    border-radius: $radius;
+    display: none;
+    justify-content: center;
+    font-size: 1.25rem;
+    height: 2.5rem;
+    width: 2.5rem;
+    &:hover {
+      background-color: #ffffff10;
+      color: $color;
+    }
+    &:active {
+      background-color: #ffffff20;
+    }
+    @media screen and (max-width: 62em) {
+      display: flex;
     }
   }
   &__icon {
@@ -121,6 +144,27 @@ body, .wrapper, .main, .main__content, .main__content:nth-child(5), .main__statu
     }
   }
 }
+
+.aside {
+  width: 100%;
+  z-index: 1;
+  position: relative;
+  top: 5rem;
+  ul {
+    list-style-type: none;
+    a {
+      @include clearLink;
+      li {
+        padding: .5rem;
+        &:hover {
+          background-color: #ffffff10;
+          border-radius: $radius;
+        }
+      }
+    }
+  }
+}
+
 .main {
   @include alignItems;
   position: absolute;
@@ -144,7 +188,7 @@ body, .wrapper, .main, .main__content, .main__content:nth-child(5), .main__statu
       min-height: 100vh;
     }
     &:nth-child(5) {
-      width: 100vw;
+      width: calc(100vw - 2rem);
     }
     @media screen and (max-width: 30rem) {
       /* 480px */
@@ -161,6 +205,12 @@ body, .wrapper, .main, .main__content, .main__content:nth-child(5), .main__statu
     margin: 1rem;
     h1, h2, p {
      text-align: center;
+    }
+  }
+  &__name {
+    @media screen and (max-width: 62em) {
+      /* 992px */
+      margin-top: 5rem !important;
     }
   }
   &__btn {
@@ -242,6 +292,18 @@ body, .wrapper, .main, .main__content, .main__content:nth-child(5), .main__statu
       height: 100%;
       width: 100%;
     }
+    @media screen and (min-width: 88.563em) {
+      /* 1417px */
+      width: calc(45% - 0.5rem);
+    }
+    @media screen and (min-width: 98.438em) {
+      /* 1575px */
+      width: calc(40% - 0.5rem);
+    }
+    @media screen and (min-width: 110.75em) {
+      /* 1772px */
+      width: calc(35% - 0.5rem);
+    }
   }
 }
 .footer {
@@ -282,15 +344,6 @@ body, .wrapper, .main, .main__content, .main__content:nth-child(5), .main__statu
   &__items {
     display: flex;
     flex-wrap: wrap;
-    @media screen and (max-width: 62em) {
-      /* 992px */
-      ul {
-        display: none;
-      }
-      svg {
-        display: block;
-      }
-    }
     @media screen and (max-width: 49.188em) {
       /* 787px */
       margin: .5rem 0;
@@ -312,18 +365,6 @@ body, .wrapper, .main, .main__content, .main__content:nth-child(5), .main__statu
         @include hoverLink;
         color: $color;
       }
-    }
-    @media screen and (min-width: 88.563em) {
-      /* 1417px */
-      width: calc(45% - 0.5rem);
-    }
-    @media screen and (min-width: 98.438em) {
-      /* 1575px */
-      width: calc(40% - 0.5rem);
-    }
-    @media screen and (min-width: 110.75em) {
-      /* 1772px */
-      width: calc(35% - 0.5rem);
     }
     @media screen and (max-width: 49.188em) {
       /* 787px */
