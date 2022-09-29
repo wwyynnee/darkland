@@ -247,6 +247,9 @@ body, .wrapper, .main, .main__content, .main__content:nth-child(5), .main__statu
       font-weight: 600;
       text-align: center;
     }
+    span {
+      color: $color;
+    }
     a {
       @include hoverLink;
       text-decoration: none;
@@ -358,6 +361,9 @@ body, .wrapper, .main, .main__content, .main__content:nth-child(5), .main__statu
     }
     ul {
       list-style-type: none;
+      li {
+        color: $color;
+      }
       a {
         @include clearLink;
         @include hoverLink;
